@@ -1,0 +1,27 @@
+#name : dij
+# --
+typedef pair<${1:int},int> pr;
+void dij(int s,$1 d[])
+{
+    priority_queue<pr,vector<pr>,greater<pr> >q;
+    for(int i=0; i<n; i++)d[i]=(i==s?0:inf);
+    memset(f,0,sizeof(f));
+    q.push(make_pair(d[s],s));
+    while(!q.empty())
+    {
+        pr pii=q.top();
+        int x=pii.second;
+        q.pop();
+        if(f[x])continue;
+        f[x]=1;
+        for(int e=first[x]; e; e=nxt[e])
+        {
+            int v=edg[e].b;
+            if(f[v]==0&&d[v]>d[x]+edg[e].v)
+            {
+                d[v]=d[x]+edg[e].v;
+                q.push(make_pair(d[v],v));
+            }
+        }
+    }
+}

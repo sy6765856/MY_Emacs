@@ -1,0 +1,15 @@
+# name : vpt
+# --
+struct ${1:vpt}
+{
+	${2:double} x,y,z;
+	$1(){}
+	$1($2 x,$2 y,$2 z):x(x),y(y),z(z){}
+	$1 operator-(const $1&u)const{return $1(x-u.x,y-u.y,z-u.z);}
+	$1 operator/(const $2 s)const{return $1(x/s,y/s,z/s);}
+	$1 operator*(const $2 s)const{return $1(x*s,y*s,z*s);}
+	$1 operator*(const $1&u)const{return $1(y*u.z-z*u.y,z*u.x-x*u.z,x*u.y-y*u.x);}
+	$2 operator^(const $1&u)const{return x*u.x+y*u.y+z*u.z;}
+	bool operator==(const $1&u)const{return x==u.x&&y==u.y;}
+	$2 len(){return sqrt(x*x+y*y+z*z);}
+};

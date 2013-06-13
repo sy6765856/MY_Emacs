@@ -1,0 +1,13 @@
+# name : center
+# --
+void center(${1:pt} p0,$1 p1,$1 p2,$1 &cp)
+{
+	$1 a,b,c;
+	a=p1-p0;b=p2-p0;
+	c.x=sqr(a.x)+sqr(a.y);
+	c.y=sqr(b.x)+sqr(b.y);
+	double d=a*b;
+	cp.x=c.x*b.y-c.y*a.y;
+	cp.y=a.x*c.y-b.x*c.x;
+	cp=cp/d/2+p0;
+}

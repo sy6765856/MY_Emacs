@@ -1,0 +1,34 @@
+# name : prim
+# --
+int f[N];
+${1:int} d[N];
+$1 prim(int s,$1 a[N][N])
+{
+    for(int i=0;i<n;++i)
+    {
+        f[i]=0;
+        d[i]=a[s][i];
+    }
+    f[s]=1;
+    $1 ans=0;
+    for(int i=1;i<n;++i)
+    {
+        $1 mi=inf;
+        for(int j=0;j<n;++j)
+        {
+            if (!f[j]&&d[j]<mi)
+            {
+                mi=d[j];
+                s=j;
+            }
+        }
+        f[s]=1;
+        if(mi==inf)return -1;
+        ans+=mi;
+        for(int j=0;j<n;++j)
+        {
+            d[j]=min(d[j],a[s][j]);
+        }
+    }
+    return ans;
+}

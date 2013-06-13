@@ -1,0 +1,15 @@
+# name : pt
+# --
+struct ${1:pt}
+{
+	${2:double} x,y;
+	$1(){}
+	$1($2 x,$2 y):x(x),y(y){}
+	$1 operator +(const $1 &u)const{return $1(x+u.x,y+u.y);}
+	$1 operator -(const $1 &u)const{return $1(x-u.x,y-u.y);}
+	$1 operator *(const $2 &u)const{return $1(x*u,y*u);}
+	$1 operator /(const $2 &u)const{return $1(x/u,y/u);}
+	$2 operator *(const $1 &u)const{return x*u.y-y*u.x;}
+	$2 operator ^(const $1 &u)const{return x*u.x+y*u.y;}
+	bool operator <(const $1 &u)const{if(u.y!=y)return y<u.y;return x<u.x;}
+};

@@ -1,0 +1,4 @@
+# name : get
+# --
+def get(self,req,*args,**kwargs):
+	return

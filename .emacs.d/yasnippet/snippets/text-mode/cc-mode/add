@@ -1,0 +1,14 @@
+#name : add
+# --
+int e,first[N],nxt[M];
+struct ed
+{
+		int b
+		${3:int} v;
+}edg[M];
+void add(int a,int b,$3 v)
+{
+    edg[e].b=b;edg[e].v=v;
+    nxt[e]=first[a];
+    first[a]=e++;
+}

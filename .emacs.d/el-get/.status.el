@@ -1,0 +1,1 @@
+(:el-get "installed" :color-theme "installed" :color-theme-mac-classic "installed")

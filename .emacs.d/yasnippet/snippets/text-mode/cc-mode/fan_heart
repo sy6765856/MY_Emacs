@@ -1,0 +1,7 @@
+# name : fan_heart
+# --
+${1:double} disac($1 r,$1 th)
+{
+	th/=2;
+	return 2*r*sin(th)/3/th;
+}
