@@ -9,6 +9,7 @@
 (add-to-list 'load-path "~/.emacs.d/auto-complete")
 (add-to-list 'load-path "~/.emacs.d/python-mode")
 (add-to-list 'load-path "~/.emacs.d/emacs-w3m")
+(add-to-list 'load-path "~/.emacs.d/jdee-2.4.1/lisp")
 
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete/dict")
@@ -168,3 +169,4 @@ emms-player-mpg321))
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  )
+(load "jde")
